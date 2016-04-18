@@ -1,0 +1,41 @@
+﻿@model FormsTrainingTask.Models.MovieModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>Here are the details for:- <strong>@Model.Title</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Model.Title
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distributor)
+        </dt>
+
+        <dd>
+            @Model.Distributor
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Model.Date.ToLongDateString()
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

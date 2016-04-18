@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FormsTrainingTask.Models.MovieModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Top Ten Movies of 2016</h2>
+<ul>
+    <li>Create hardcoded dummy model data and display data</li>
+    <li>Have a list of customers</li>
+    <li>Click through to a details page</li>
+    <li>Add to list data on form post</li>
+</ul>
+
+<p>
+    @Html.ActionLink("Create New", "MovieAdd")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distributor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Title
+        </td>
+        <td>
+            @item.Distributor
+        </td>
+        <td>
+            @item.Date.ToLongDateString()
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to Content", "Index", "Home")
+</div>

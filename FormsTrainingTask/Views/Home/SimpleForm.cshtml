@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "First Task";
+}
+
+<h2>Post form data to Action with Form Collection/ Request</h2>
+@using (Html.BeginForm())
+{
+    if (ViewBag.firstname != null && ViewBag.lastname != null)
+    {
+        <div>
+            You have submitted:<br />
+
+            @*Firstname: @ViewData["firstname"]<br />
+                Lastname: @ViewData["lastname"]<br /><br />*@
+
+            First Name: @ViewBag.firstname<br />
+            Last Name: @ViewBag.lastname<br />
+
+        </div>
+    }
+        <fieldset>
+            <legend>Vanilla HTML</legend>
+            First Name:
+            <input type="text" name="firstname" placeholder="First Name" />
+            <br>
+            Last Name:
+            <input type="text" name="lastname" placeholder="Last Name" />
+            <br>
+            <input type="submit" value="Submit" />
+        </fieldset>
+}
+    <br />
+
+    <div>
+         @Html.ActionLink("Back to Content", "Index")
+    </div>

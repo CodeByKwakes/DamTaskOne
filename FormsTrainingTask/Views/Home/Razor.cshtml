@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Second Task";
+}
+
+<h2>Use Razor syntax</h2>
+
+
+<form action="" method="post">
+    <fieldset>
+        <legend>Razor</legend>
+        First Name:
+        <input type="text" name="firstname" placeholder="First Name" />
+        <br>
+        Last Name:
+        <input type="text" name="lastname" placeholder="Last Name" />
+        <br>
+        <input type="submit" value="Submit" /> <br />
+        @{
+            if (IsPost)
+            {
+                string firstname = Request.Form["firstname"];
+                string lastname = Request.Form["lastname"];
+
+
+                <text>
+                    The name you entered was: <br />
+                    Full Name: @firstname @lastname
+                </text>
+            }
+        }
+    </fieldset>
+
+</form><br />
+
+<div>
+    @Html.ActionLink("Back to Content", "Index")
+</div>
