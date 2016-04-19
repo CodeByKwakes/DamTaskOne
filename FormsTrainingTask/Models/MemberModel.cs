@@ -16,12 +16,12 @@ namespace FormsTrainingTask.Models
 
         [Required]
         [Display(Name = "First Name")]
-        [StringLength(15, ErrorMessage = "First Name length Should be less than 50")]
+        [StringLength(20, ErrorMessage = "First Name length Should be less than 20")]
         public string FirstName { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
-        [StringLength(50, ErrorMessage = "Last Name length Should be less than 50")]
+        [StringLength(20, ErrorMessage = "Last Name length Should be less than 20")]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Please enter the name of the City you live")]
