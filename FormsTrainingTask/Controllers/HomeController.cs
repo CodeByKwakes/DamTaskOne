@@ -42,5 +42,10 @@ namespace FormsTrainingTask.Controllers
             return RedirectToAction("Index", "User");
         }
 
+        public ActionResult MembershipForm()
+        {
+            return RedirectToAction("Index", "Member");
+        }
+
     }
 }
