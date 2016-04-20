@@ -72,16 +72,4 @@ namespace FormsTrainingTask.Models
         Dr
     }
 
-    public class Members
-    {
-        public List<MemberModel> memberList = new List<MemberModel>();
-
-        // Create User Method
-        public void CreateMember(MemberModel memberModel)
-        {
-            memberList.Add(memberModel);
-        }
-    }
-
-
 }

@@ -9,11 +9,12 @@ namespace FormsTrainingTask.Controllers
 {
     public class MemberController : Controller
     {
+        static List<MemberModel> members = new List<MemberModel>();
         // GET: Members
-        private static Members members = new Members();
+        //private static Members members = new Members();
         public ActionResult Index()
         {
-            return View(members.memberList);
+            return View(members);
         }
         public ActionResult AddMember()
         {
@@ -21,10 +22,16 @@ namespace FormsTrainingTask.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddMember(MemberModel memberModel)
+        public ActionResult AddMember(MemberModel m)
         {
-            members.CreateMember(memberModel);
-            return View("Index", members.memberList);
+
+            if (!ModelState.IsValid)
+            {
+                return View("AddMember", m);
+            }
+
+            members.Add(m);
+            return RedirectToAction("Index");
         }
     }
 }
