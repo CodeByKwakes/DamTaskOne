@@ -4,25 +4,24 @@
 }
 
 <h2>Use Razor syntax</h2>
-
-
+@{
+    string firstname = Request.Form["firstname"];
+    string lastname = Request.Form["lastname"];
+}
 <form action="" method="post">
     <fieldset>
         <legend>Razor</legend>
         First Name:
-        <input type="text" name="firstname" placeholder="First Name" />
+        <input type="text" name="firstname" placeholder="First Name" value="@firstname" />
         <br>
         Last Name:
-        <input type="text" name="lastname" placeholder="Last Name" />
+        <input type="text" name="lastname" placeholder="Last Name" value="@lastname" />
         <br>
         <input type="submit" value="Submit" /> <br />
         @{
-            if (IsPost)
+            //if (firstname != string.Empty && lastname != string.Empty)
+            if (firstname != "" && lastname != "")
             {
-                string firstname = Request.Form["firstname"];
-                string lastname = Request.Form["lastname"];
-
-
                 <text>
                     The name you entered was: <br />
                     Full Name: @firstname @lastname
@@ -30,9 +29,10 @@
             }
         }
     </fieldset>
-
-</form><br />
-
+</form>
+<br />
 <div>
     @Html.ActionLink("Back to Content", "Index")
 </div>
+
+
