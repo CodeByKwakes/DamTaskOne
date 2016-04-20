@@ -9,22 +9,30 @@ namespace FormsTrainingTask.Controllers
 {
     public class UserController : Controller
     {
+        static List<UserModel> users = new List<UserModel>();
         // GET: User
-        private static Users users = new Users();
         public ActionResult Index()
         {
-            return View(users.userList);
+            return View(users);
         }
+        // GET: User/Add
         public ActionResult UserAdd()
         {
             return View();
         }
 
+        // POST: User/Create
         [HttpPost]
-        public ActionResult UserAdd(UserModel userModel)
+        public ActionResult UserAdd(UserModel u)
         {
-            users.CreateUser(userModel);
-            return View("Index",users.userList);
+            if (!ModelState.IsValid)
+            {
+                return View("UserAdd", u);
+            }
+
+           users.Add(u);
+
+            return RedirectToAction("Index");
         }
     }
 }

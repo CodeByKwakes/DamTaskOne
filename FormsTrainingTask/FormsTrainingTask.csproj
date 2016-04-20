@@ -124,7 +124,6 @@
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
