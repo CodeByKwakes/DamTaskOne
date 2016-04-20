@@ -25,10 +25,6 @@ namespace FormsTrainingTask.Controllers
         [HttpPost]
         public ActionResult UserAdd(UserModel u)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("UserAdd", u);
-            }
 
            users.Add(u);
 
