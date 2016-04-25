@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Client";
+}
+
+<h2>Client Side Validation </h2>
+
+<p>Produce forms only using html and custom made scripts</p>
+<p>Make 2 Examples –</p>
+<ul>
+    <li>One made with JavaScript to validate</li>
+    <li>One made with JQuery to validate</li>
+</ul>
+<p></p>Complete the following tasks: -
+<ul>
+    <li>Prevent submission of the form when validation fails</li>
+    <li>Display an error message on the same page when validation fails</li>
+    <li>Display an error message as an alert box (pop up) when validation fails</li>
+    <li>Display full validation and message stating error – i.e. “This field needs ten characters and you have only typed 5”</li>
+</ul>
+<hr />
+
+<div class="container body-content">
+   <div class="col-md-6">
+       @Html.Partial("JavaScript")
+   </div>
+   <div class="col-md-6">
+       @Html.Partial("jQuery")
+   </div>
+</div>
+<br />
+<div>
+    @Html.ActionLink("Back to Content", "Index")
+</div>

@@ -41,5 +41,9 @@ namespace FormsTrainingTask.Controllers
         {
             return RedirectToAction("Index", "User");
         }
+        public ActionResult Client()
+        {
+            return View();
+        }
     }
 }

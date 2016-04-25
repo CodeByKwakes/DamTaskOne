@@ -1,0 +1,97 @@
+﻿
+<h2>Javascript</h2>
+<form action="" onsubmit="validateForm()" method="post">
+    <fieldset>
+        <legend><b>Prevent Submission</b></legend>
+        <label><b>Full Name</b></label>
+        <input type="text" name="fname" id="fname">
+        <input type="submit" value="Submit">
+    </fieldset><br /><br />
+    <p id="output"></p>
+</form>
+
+<script>
+    function validateForm() {
+        event.preventDefault();
+        var x = document.getElementById("fname").value;
+        if (x == null || x == "") {
+            return false;
+        } else {
+            document.getElementById("output").innerHTML = "The name you entered is: " + x;
+        }
+    }
+</script>
+
+<form>
+    <fieldset>
+        <legend><b>Pop up Alert</b></legend>
+        <label><b>Enter a Message</b></label>
+        <input type="text" name="message" id="user_input">
+        <input type="submit" onclick="showInput()">
+    </fieldset><br /><br />
+    <label>Your input: </label>
+    <p><span id='display'></span> </p>
+</form>
+
+<script>
+    function showInput() {
+        event.preventDefault();
+        var msg = document.getElementById("user_input").value;
+        if (msg == null || msg == "") {
+            alert("Please enter a message in the text box");
+            return false;
+        } else {
+            document.getElementById('display').innerHTML = msg;
+        }
+    }
+</script>
+
+<form>
+    <fieldset>
+        <legend><b>Same Page Error</b></legend>
+        <label><b>Enter a Message</b></label>
+        <input type="text" name="message" id="task_input">
+        <input type="submit" onclick="showMsg()">
+    </fieldset><br /><br />
+    <p><span id='outputMsg'></span> </p>
+</form>
+
+<script>
+    function showMsg() {
+        event.preventDefault();
+        var message = document.getElementById("task_input").value;
+        if (message == null || message == "") {
+            document.getElementById('outputMsg').innerHTML = "Please enter a message in the text box";
+        } else {
+            document.getElementById('outputMsg').innerHTML = "<b>Your Message: </b>" + message;
+        }
+    }
+</script>
+
+<form>
+    <fieldset>
+        <legend><b>Multipy Messages</b></legend>
+        <label><b>Enter a Phone Number</b></label>
+        <input type="number" name="message" id="num_input">
+
+        <input type="submit" onclick="showNum()">
+    </fieldset><br /><br />
+    <p><span id='tel'></span> </p>
+</form>
+
+<script>
+    function showNum() {
+        event.preventDefault();
+        var number = document.getElementById("num_input").value;
+        var max = 11;
+
+        if (number == null || number == "") {
+            document.getElementById('tel').innerHTML = "Please enter a number";
+        } else if (number.length !== max) {
+            document.getElementById('tel').innerHTML = "You have only entered " + number.length + " digits!! You need to enter " + max + " digits";
+
+        } else if (number.length == max) {
+            document.getElementById('tel').innerHTML = "<b>the Number you enterd was: </b>" + number;
+        }
+    }
+</script>

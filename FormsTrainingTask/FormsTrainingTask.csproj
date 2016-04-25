@@ -151,6 +151,9 @@
     <Content Include="Views\Movie\Delete.cshtml" />
     <Content Include="Views\Member\AddMember.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Home\Client.cshtml" />
+    <Content Include="Views\Home\JavaScript.cshtml" />
+    <Content Include="Views\Home\jQuery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

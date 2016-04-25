@@ -1,0 +1,101 @@
+﻿<h2>jQuery</h2>
+<form action="" method="post">
+    <fieldset>
+        <legend><b>Prevent Submission</b></legend>
+        <label><b>Full Name</b></label>
+        <input type="text" name="fullname" id="fullname">
+        <input type="submit" value="Submit" id="submit">
+    </fieldset><br /><br />
+    <p id="jq_output"></p>
+</form>
+
+<form action="">
+    <fieldset>
+        <legend><b>Pop up Alert</b></legend>
+        <label><b>Enter a Message</b></label>
+        <input type="text" name="message" id="jq_user_input">
+        <input type="submit" id="jq_showInput">
+    </fieldset>
+    <br /><br />
+    <label>Your input: </label>
+    <p><span id='jq_display'></span> </p>
+</form>
+
+<form>
+    <fieldset>
+        <legend><b>Same Page Error</b></legend>
+        <label><b>Enter a Message</b></label>
+        <input type="text" name="message" id="jq_task_input">
+        <input type="submit" id="jq_showMsg">
+    </fieldset><br /><br />
+    <p><span id='jq_outputMsg'></span> </p>
+</form>
+
+<form>
+    <fieldset>
+        <legend><b>Multipy Messages</b></legend>
+        <label><b>Enter a Phone Number</b></label>
+        <input type="number" name="message" id="jq_num_input">
+        <input type="submit" id="jq_showNum">
+    </fieldset><br /><br />
+    <p><span id='jq_tel'></span> </p>
+</form>
+
+<script>
+
+  $(function(){
+
+    /*Prevent Submission*/
+    $("#submit").click(function(){
+      event.preventDefault();
+      var x = $("#fullname").val();
+      if (x == null || x == "") {
+        return false;
+      } else{
+          $("#jq_output").html("The name you entered is: " + x);
+      };
+    });
+
+    /*Pop up Alert*/
+    $("#jq_showInput").click(function(){
+      event.preventDefault();
+      var msg = $("#jq_user_input").val();
+      if (msg == null || msg == "") {
+        alert("Please enter a message in the text box");
+        return false;
+      } else {
+        $("#jq_display").html(msg);
+      };
+    });
+
+    /*Same Page Error*/
+    $("#jq_showMsg").click(function(){
+      event.preventDefault();
+      var message = $("#jq_task_input").val();
+      if (message == null || message == "") {
+        $("#jq_outputMsg").html("Please enter a message in the text box");
+      } else {
+        $("#jq_outputMsg").html("<b>Your Message: </b>" + message);
+      };
+    });
+
+    /*Multipy Messages*/
+    $("#jq_showNum").click(function(){
+      event.preventDefault();
+      var number = $("#jq_num_input").val();
+      var max = 11;
+      if (number == null || number == "") {
+        $("#jq_tel").html("Please enter a number");
+      } else if (number.length !== max) {
+        $("#jq_tel").html("you have only entered " + number.length + " digits!! You need to enter " + max + " digits");
+      } else if (number.length == max) {
+        $("#jq_tel").html("<b>the Number you enterd was: </b>" + number);
+      };
+    })
+  });
+</script>
+
+
+
+
+
