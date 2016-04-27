@@ -49,7 +49,7 @@
     $("#submit").click(function(){
       event.preventDefault();
       var x = $("#fullname").val();
-      if (x == null || x == "") {
+      if (x == "") {
         return false;
       } else{
           $("#jq_output").html("The name you entered is: " + x);
@@ -60,7 +60,7 @@
     $("#jq_showInput").click(function(){
       event.preventDefault();
       var msg = $("#jq_user_input").val();
-      if (msg == null || msg == "") {
+      if ( msg == "") {
         alert("Please enter a message in the text box");
         return false;
       } else {
@@ -72,7 +72,7 @@
     $("#jq_showMsg").click(function(){
       event.preventDefault();
       var message = $("#jq_task_input").val();
-      if (message == null || message == "") {
+      if ( message == "") {
           $("#jq_outputMsg").html("Please enter a message in the text box");
       } else {
         $("#jq_outputMsg").html("<b>Your Message: </b>" + message);
@@ -84,7 +84,7 @@
       event.preventDefault();
       var number = $("#jq_num_input").val();
       var max = 11;
-      if (number == null || number == "") {
+      if ( number == "") {
         $("#jq_tel").html("Please enter a number");
       } else if (number.length !== max) {
         $("#jq_tel").html("you have only entered " + number.length + " digits!! You need to enter " + max + " digits");

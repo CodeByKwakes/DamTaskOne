@@ -14,7 +14,7 @@
     function validateForm() {
         event.preventDefault();
         var x = document.getElementById("fname").value;
-        if (x == null || x == "") {
+        if (x == "") {
             return false;
         } else {
             document.getElementById("output").innerHTML = "The name you entered is: " + x;
@@ -37,7 +37,7 @@
     function showInput() {
         event.preventDefault();
         var msg = document.getElementById("user_input").value;
-        if (msg == null || msg == "") {
+        if ( msg == "") {
             alert("Please enter a message in the text box");
             return false;
         } else {
@@ -60,7 +60,7 @@
     function showMsg() {
         event.preventDefault();
         var message = document.getElementById("task_input").value;
-        if (message == null || message == "") {
+        if ( message == "") {
             document.getElementById('outputMsg').innerHTML = "Please enter a message in the text box";
         } else {
             document.getElementById('outputMsg').innerHTML = "<b>Your Message: </b>" + message;
