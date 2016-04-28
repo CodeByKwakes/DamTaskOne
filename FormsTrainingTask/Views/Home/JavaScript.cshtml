@@ -1,6 +1,6 @@
 ﻿
 <h2>Javascript</h2>
-<form action="" onsubmit="validateForm()" method="post">
+<form action="" onsubmit="validateForm();" method="post">
     <fieldset>
         <legend><b>Prevent Submission</b></legend>
         <label><b>Full Name</b></label>
@@ -12,11 +12,11 @@
 
 <script>
     function validateForm() {
-        event.preventDefault();
         var x = document.getElementById("fname").value;
         if (x == "") {
             return false;
         } else {
+            return true;
             document.getElementById("output").innerHTML = "The name you entered is: " + x;
         }
     }
@@ -89,7 +89,6 @@
             document.getElementById('tel').innerHTML = "Please enter a number";
         } else if (number.length !== max) {
             document.getElementById('tel').innerHTML = "You have only entered " + number.length + " digits!! You need to enter " + max + " digits";
-
         } else if (number.length == max) {
             document.getElementById('tel').innerHTML = "<b>the Number you enterd was: </b>" + number;
         }

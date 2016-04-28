@@ -57,8 +57,10 @@
     });
 
     /*Pop up Alert*/
-    $("#jq_showInput").click(function(){
-      event.preventDefault();
+    $("#jq_showInput").click(function(evt){
+      evt.preventDefault();
+      console.log(this);
+
       var msg = $("#jq_user_input").val();
       if ( msg == "") {
         alert("Please enter a message in the text box");
@@ -75,7 +77,8 @@
       if ( message == "") {
           $("#jq_outputMsg").html("Please enter a message in the text box");
       } else {
-        $("#jq_outputMsg").html("<b>Your Message: </b>" + message);
+          $("#jq_outputMsg").html("<b>Your Message: </b>" + message);
+          $("#jq_outputMsg").hide().fadeIn("slow");
       };
     });
 
